@@ -26,3 +26,6 @@ spec:
         - name: container-2
           image: nginx
           command: ["sleep", "1000"]
+          envFrom:
+            - secretRef:
+                name: roboshop-secret-key
