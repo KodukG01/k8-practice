@@ -6,7 +6,7 @@ metadata:
   labels:
     project: roboshop
     environment: dev
-    annotations:
+  annotations:
     description: "This pod is created to demonstrate pod annotations"
     jenkins: "https://jenkins.com/build/job/roboshop-catalouge/3"
 spec:
