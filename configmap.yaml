@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: Roboshop-key
+  labels:
+    project: roboshop
+    environment: dev
+data:
+  backend: python
+  database: mysql
+  frontend: reactjs
