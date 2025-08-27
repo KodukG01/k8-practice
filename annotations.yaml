@@ -26,9 +26,11 @@ spec:
         - name: container-d
           image: nginx
           env:
-            movie: coolie
-            language: telugu
-
+          - name: movie
+            value: coolie
+          - name: hero
+            value: rajanikanth
+            
 
 
 
