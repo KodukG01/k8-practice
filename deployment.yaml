@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-Deployment
+  Namespace: roboshop
+  labels:
+    project: roboshop
+    environment: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: roboshop
+      environment: dev
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        environment: dev
+    spec:
+      containers:
+        - name: container-1
+          image: nginx
+          
+        - name: container-2
+          image: nginx
+          command: ["sleep", "1000"]
