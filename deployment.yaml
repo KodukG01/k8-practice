@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: roboshop-Deployment
-  nameSpace: roboshop
+  namespace: roboshop
   labels:
     project: roboshop
     environment: dev
