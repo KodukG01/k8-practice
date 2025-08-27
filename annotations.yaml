@@ -1,0 +1,32 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  name: coolie
+  namespace: roboshop
+  labels:
+    project: roboshop
+    environment: dev
+    annotations:
+    description: "This pod is created to demonstrate pod annotations"
+    jenkins: "https://jenkins.com/build/job/roboshop-catalouge/3"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: roboshop
+      environment: dev
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        environment: dev
+
+    spec:
+      containers:
+        - name: container-d
+          image: nginx
+          
+
+
+
+
