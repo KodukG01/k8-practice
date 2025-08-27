@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roboshop-deployment
+  namespace: roboshop
+  labels:
+    project: roboshop
+    environment: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: roboshop
+      environment: dev
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        environment: dev
+    spec:
+      containers:
+        - name: container-1
+          image: nginx
+          resources:
+            requests:
+              memory: "68Mi"
+              cpu: "100m"
+            limits:
+              memory: "200Mi"
+              cpu: "300m"
