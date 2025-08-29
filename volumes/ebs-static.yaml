@@ -3,10 +3,10 @@ kind: PersistentVolume
 metadata:
   name: static-volume
 spec:
-  accessModes:
-  - ReadWriteOnce
   capacity:
     storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
@@ -17,7 +17,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: static-volume
 spec:
-  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  storageClassName: "" # prevent default StorageClass
   volumeName: static-volume
   accessModes:
     - ReadWriteOnce
@@ -45,21 +45,18 @@ spec:
         environment: dev
     spec:
       nodeSelector:
-        topology.kubernetes.io/zone: us-east-1d
+        topology.kubernetes.io/zone: us-east-1d   # must match EBS volume AZ
       containers:
         - name: container-1
           image: nginx
           volumeMounts:
             - name: static-volume
               mountPath: "/usr/share/nginx/html"
-
       volumes:
         - name: static-volume
           persistentVolumeClaim:
             claimName: static-volume
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -70,14 +67,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    labels:
     project: roboshop
     environment: dev
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-
-
-          
-   
