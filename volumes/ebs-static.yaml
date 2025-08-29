@@ -29,7 +29,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: roboshop-deployment-dev
-  namespace: roboshop
   labels:
     project: roboshop
     environment: dev
