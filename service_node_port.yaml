@@ -31,8 +31,9 @@ spec:
       environment: dev
   template:
     metadata:
-      project: roboshop
-      environment: dev
+      labels:
+        project: roboshop
+        environment: dev
     spec:
       containers:
         - name: roboshop-container-1
