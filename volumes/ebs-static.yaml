@@ -56,5 +56,27 @@ spec:
         - name: static-volume
           PersistentVolumeClaim:
             claimName: static-volume
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: roboshop-Service
+  labels:
+    project: roboshop
+    environment: dev
+spec:
+  type: LoadBalancer
+  selector:
+    labels:
+    project: roboshop
+    environment: dev
+  ports:
+    - protocol: TCP
+      port: 80
+      containerPort: 80
+      
+
           
    
