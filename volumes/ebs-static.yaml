@@ -54,7 +54,7 @@ spec:
 
       volumes:
         - name: static-volume
-          PersistentVolumeClaim:
+          persistentVolumeClaim:
             claimName: static-volume
 
 ---
@@ -75,8 +75,8 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      containerPort: 80
-      
+      targetPort: 80
+
 
           
    
