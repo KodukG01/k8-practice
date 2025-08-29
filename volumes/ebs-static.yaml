@@ -62,7 +62,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: roboshop-Service
+  name: roboshop-service
   labels:
     project: roboshop
     environment: dev
