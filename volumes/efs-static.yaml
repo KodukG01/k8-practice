@@ -69,8 +69,8 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-      environment: dev
-      project: roboshop
+    environment: dev
+    project: roboshop
     ports:
       - protocol: TCP
         port: 80
