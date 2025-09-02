@@ -53,13 +53,13 @@ spec:
         volumeMounts:
         - name: dynamic-volume
           mountPath: /usr/share/nginx/html
-      volumeClaimTemplates:
-      - metadata:
-        name: dynamic-volume
+  volumeClaimTemplates:
+  - metadata:
+      name: dynamic-volume
 
-        spec:
-          accessModes: [ "ReadWriteOnce" ]
-          storageClassName: "roboshop-ebs-sc"
-          resources:
-            requests:
-              storage: 1Gi
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "roboshop-ebs-sc"
+      resources:
+        requests:
+          storage: 1Gi
