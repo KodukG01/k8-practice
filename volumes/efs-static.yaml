@@ -69,7 +69,6 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    matchLabels:
       environment: dev
       project: roboshop
     ports:
