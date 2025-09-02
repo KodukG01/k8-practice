@@ -13,3 +13,18 @@ spec:
   csi:
     driver: efs.csi.aws.com
     volumeHandle: fs-0f0c3676d652c7dfd
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: roboshop-efs-static
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 5Gi
+
+
